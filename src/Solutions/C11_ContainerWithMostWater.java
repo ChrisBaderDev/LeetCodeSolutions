@@ -8,9 +8,9 @@ public class C11_ContainerWithMostWater {
         // Calculate every possible combination and return the largest.
         for(int i = 0; i < height.length; i++) {
             for(int j = i + 1; j < height.length; j++) {
-                int x = j - i;
-                int y = Math.min(height[i], height[j]);
-                maxArea = Math.max(maxArea, x * y);
+                int x = j - i;                              // Distance between the two walls
+                int y = Math.min(height[i], height[j]);     // Height of the lower wall
+                maxArea = Math.max(maxArea, x * y);         // Area between both walls, if it is bigger than best known.
             }
         }
         return maxArea;
