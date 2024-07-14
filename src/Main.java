@@ -1,4 +1,5 @@
 import Solutions.C12_IntegerToRoman;
+import Solutions.C13_RomanToInteger;
 import Solutions.C14_LongestCommonPrefix;
 
 import java.util.HashMap;
@@ -8,8 +9,8 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        C12_IntegerToRoman c12 = new C12_IntegerToRoman();
-        System.out.println(c12.intToRoman(1234));
-        System.out.println(c12.intToRomanV2(1234));
+        C14_LongestCommonPrefix c14 = new C14_LongestCommonPrefix();
+        System.out.println(c14.longestCommonPrefix(new String[]{"a", "b"}));
+
     }
 }
