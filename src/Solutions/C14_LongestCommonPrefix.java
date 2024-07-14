@@ -25,22 +25,14 @@ public class C14_LongestCommonPrefix {
         if(strs==null || strs.length==0) return "";
         Arrays.sort(strs);
         StringBuilder lcp = new StringBuilder();
-        for(int i = 0; i < Math.min(strs[0].length(), strs[strs.length - 1].length()); i++) {
-            if(strs[0].charAt(i) != strs[strs.length - 1].charAt(i)) return lcp.toString();
+        String start = strs[0];
+        String end = strs[strs.length - 1];
+        for(int i = 0; i < Math.min(start.length(), end.length()); i++) {
+            if(start.charAt(i) != end.charAt(i)) return lcp.toString();
             lcp.append(strs[0].charAt(i));
         }
         return lcp.toString();
     }
 
     // Reverse Approach
-    public String longestCommonPrefixV3(String[] strs) {
-        if(strs==null || strs.length==0) return "";
-        String prefix = strs[0];
-        for(String s:strs) {
-            while(s.indexOf(prefix)!=0) {
-                prefix = prefix.substring(0, prefix.length()-1);
-            }
-        }
-        return prefix;
-    }
 }
