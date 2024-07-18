@@ -41,13 +41,19 @@ public class C15_3Sum {
         List<List<Integer>> triplets = new ArrayList<>();
         Arrays.sort(nums);
         for (int fixed = 0; fixed < nums.length - 2; fixed++) {
-            if(fixed > 0 && nums[fixed] == nums[fixed - 1]) continue;           // Skip duplicates
-            if(nums[fixed] > 0) break;                          // fixed value is > 0 so 0 isn't possible anymore
+            // Skip duplicates
+            if(fixed > 0 && nums[fixed] == nums[fixed - 1])
+                continue;
+            // fixed value is > 0 so 0 isn't possible anymore
+            if(nums[fixed] > 0) break;
             int left = fixed + 1, right = nums.length - 1;
             while (left < right) {
                 int sum = nums[fixed] + nums[left] + nums[right];
                 if (sum == 0) {
-                    triplets.add(Arrays.asList(nums[fixed], nums[left], nums[right]));
+                    triplets.add(Arrays.asList(
+                            nums[fixed],
+                            nums[left],
+                            nums[right]));
                     // Skip duplicates for left and right pointers
                     while (left < right && nums[left] == nums[left + 1]) {
                         left++;
